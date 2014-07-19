@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+  <div class="m-photos" id="m-photos">
+
+  </div>
+
+  <script src="assets/js/lib.js"></script>
+  <script>
+    //获取图片容器
+    var oPhotoContainer = document.getElementById('m-photos');
+    loadImg(oPhotoContainer);
+
+    /*
+    * 往容器中插入数据
+    * 问题: 直接插入会出现用户体验非常差的效果
+    * 解决: 图片预加载或者加loading图标
+    */
+    // 瀑布流事件
+    window.onscroll = function() {
+      var oHeight = document.getElementById('m-photos').offsetHeight;
+      if (oHeight - 20 < getViewHeight() + getScrollTop()) {
+        loadImg(oPhotoContainer);
+      }
+    };
+  </script>
+</body>
+</html>
