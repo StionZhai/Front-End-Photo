@@ -7,3 +7,5 @@ Front-End-Photo
 天的照片应该被划分到同一个组里面，不同一天的照片应该被划分到不同
 的组里面。函数签名如下：
 ```javascript
+function group(photos) { };
+```
